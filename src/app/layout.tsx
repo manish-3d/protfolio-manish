@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Pixelify_Sans, Inter, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import { LightingProvider } from "@/context/LightingContext";
 import "./globals.css";
 
 const pixelify = Pixelify_Sans({
@@ -39,14 +40,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${pixelify.variable} ${inter.variable} ${geistMono.variable} dark`}>
-      <body className="min-h-screen bg-[#101e37] text-[#f4f0e8] flex flex-col antialiased selection:bg-[#36c653] selection:text-[#141312]">
-        <Suspense fallback={<div className="h-16 w-full" />}>
-          <Navbar />
-        </Suspense>
-        <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4">
-          {children}
-        </main>
-        <Footer />
+      <body className="min-h-screen text-[#f4f0e8] flex flex-col antialiased selection:bg-[#36c653] selection:text-[#141312]">
+        <LightingProvider>
+          <Suspense fallback={<div className="h-16 w-full" />}>
+            <Navbar />
+          </Suspense>
+          <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4">
+            {children}
+          </main>
+          <Footer />
+        </LightingProvider>
       </body>
     </html>
   );

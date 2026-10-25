@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { sound } from "@/lib/soundService";
+import { useLighting } from "@/context/LightingContext";
 
 interface SignItem {
   icon: string;
@@ -20,19 +21,60 @@ const SIGNS: SignItem[] = [
 ];
 
 export default function HangingSigns() {
+  const { lights, toggleLight } = useLighting();
+  const isTorchesLit = lights.signTorches;
+
   const handleClick = () => {
     sound.playWoodClick();
   };
 
+  const handleTorchClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    toggleLight("signTorches");
+  };
+
   return (
-    <div className="mc-sway-container flex flex-col items-center">
-      {/* Top Iron Anchor Chains */}
-      <div className="flex justify-between w-48 px-6 -mb-1 z-10">
-        <div className="flex flex-col items-center">
+    <div className="mc-sway-container flex flex-col items-center relative">
+      {/* Top Iron Anchor Chains with Optional Wall Torches */}
+      <div className="flex justify-between w-52 px-4 -mb-1 z-10 relative">
+        {/* Left Chain & Torch */}
+        <div
+          onClick={handleTorchClick}
+          title={isTorchesLit ? "🔥 Sign Torch ON (Click to extinguish)" : "Sign Torch OFF (Click to ignite)"}
+          className="flex flex-col items-center cursor-pointer group/torch"
+        >
+          {isTorchesLit ? (
+            <div className="relative -mb-1">
+              <div
+                className="w-2.5 h-3 bg-gradient-to-t from-[#ff8800] via-[#ffcc00] to-white rounded-xs shadow-[0_0_8px_#ff9900]"
+                style={{ animation: "mc-candle-flicker 2.1s ease-in-out infinite" }}
+              />
+              <div className="w-1.5 h-2.5 bg-[#493421] border border-[#2b1e13] mx-auto" />
+            </div>
+          ) : (
+            <div className="w-1.5 h-2 bg-[#2b1e13] -mb-0.5" />
+          )}
           <div className="w-1.5 h-3 bg-neutral-400 border border-neutral-700 shadow-sm"></div>
           <div className="w-1.5 h-3 bg-neutral-300 border border-neutral-700 -mt-0.5 shadow-sm"></div>
         </div>
-        <div className="flex flex-col items-center">
+
+        {/* Right Chain & Torch */}
+        <div
+          onClick={handleTorchClick}
+          title={isTorchesLit ? "🔥 Sign Torch ON (Click to extinguish)" : "Sign Torch OFF (Click to ignite)"}
+          className="flex flex-col items-center cursor-pointer group/torch"
+        >
+          {isTorchesLit ? (
+            <div className="relative -mb-1">
+              <div
+                className="w-2.5 h-3 bg-gradient-to-t from-[#ff8800] via-[#ffcc00] to-white rounded-xs shadow-[0_0_8px_#ff9900]"
+                style={{ animation: "mc-candle-flicker 2.5s ease-in-out infinite 0.3s" }}
+              />
+              <div className="w-1.5 h-2.5 bg-[#493421] border border-[#2b1e13] mx-auto" />
+            </div>
+          ) : (
+            <div className="w-1.5 h-2 bg-[#2b1e13] -mb-0.5" />
+          )}
           <div className="w-1.5 h-3 bg-neutral-400 border border-neutral-700 shadow-sm"></div>
           <div className="w-1.5 h-3 bg-neutral-300 border border-neutral-700 -mt-0.5 shadow-sm"></div>
         </div>

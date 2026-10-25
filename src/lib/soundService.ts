@@ -90,6 +90,36 @@ class SoundService {
       // Audio playback blocked or unsupported
     }
   }
+
+  public playLeverClick(isOn: boolean = true) {
+    if (!this.enabled) return;
+    try {
+      this.initContext();
+      if (!this.ctx) return;
+      if (this.ctx.state === "suspended") {
+        this.ctx.resume();
+      }
+
+      const now = this.ctx.currentTime;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+
+      osc.type = isOn ? "triangle" : "square";
+      osc.frequency.setValueAtTime(isOn ? 820 : 640, now);
+      osc.frequency.exponentialRampToValueAtTime(isOn ? 180 : 120, now + 0.035);
+
+      gain.gain.setValueAtTime(0.28, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + 0.04);
+    } catch {
+      // Audio playback blocked
+    }
+  }
 }
 
 export const sound = new SoundService();
