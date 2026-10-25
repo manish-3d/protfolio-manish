@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+:root {
+  /* Environmental Backgrounds */
+  --color-sky-deep: #101e37;
+  --color-sky-horizon: #1e3352;
+  --color-forest-dark: #1b3824;
+  --color-forest-accent: #254b32;
+
+  /* UI Frame & Wooden Surfaces */
+  --color-wood-border-dark: #30251d;
+  --color-wood-frame: #493421;
+  --color-wood-highlight: #6b4d32;
+  --color-wood-shadow: #221811;
+
+  /* Inset Content Surfaces */
+  --color-panel-bg: #1c1b19;
+  --color-card-bg: #252320;
+  --color-card-border: #38342e;
+  --color-slot-bg: #141312;
+
+  /* Interactive Accents */
+  --color-emerald-primary: #36c653;
+  --color-emerald-hover: #42df64;
+  --color-emerald-shadow: #1e7a33;
+  --color-emerald-soft: #8de6a0;
+  --color-lantern-gold: #f5c66b;
+  --color-stone-border: #77736d;
+
+  /* High-Contrast Typography */
+  --color-text-title: #f4f0e8;
+  --color-text-body: #d2cbbf;
+  --color-text-muted: #8e8a82;
+  --color-text-inverse: #141312;
+
+  --background: #101e37;
+  --foreground: #f4f0e8;
+}
+
+body {
+  background-color: var(--color-sky-deep);
+  color: var(--color-text-body);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Authentic Minecraft Wooden Panel */
+.mc-panel-wood {
+  background-color: var(--color-panel-bg);
+  border: 4px solid var(--color-wood-frame);
+  box-shadow: 
+    inset 2px 2px 0px 0px var(--color-wood-highlight),
+    inset -2px -2px 0px 0px var(--color-wood-shadow),
+    0px 6px 18px rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+}
+
+/* Authentic Minecraft Inset Card */
+.mc-card-inset {
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-card-border);
+  box-shadow: 
+    inset 2px 2px 0px 0px rgba(0, 0, 0, 0.6),
+    inset -1px -1px 0px 0px rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+
+/* Inventory Slot (Item grid in Tech Stack) */
+.mc-inventory-slot {
+  background-color: var(--color-slot-bg);
+  border: 2px solid #302c28;
+  box-shadow: 
+    inset 2px 2px 0px 0px #0b0a09,
+    inset -1px -1px 0px 0px #4d463f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.mc-inventory-slot:hover {
+  border-color: var(--color-emerald-soft);
+  box-shadow: 
+    inset 2px 2px 0px 0px #0b0a09,
+    inset -1px -1px 0px 0px #4d463f,
+    0 0 10px rgba(54, 198, 83, 0.4);
+  transform: scale(1.08);
+  z-index: 20;
+}
+
+/* Primary Button: Creeper Green */
+.mc-btn-primary {
+  background-color: var(--color-emerald-primary);
+  color: var(--color-text-inverse);
+  font-family: var(--font-pixel), monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 2px solid #144f22;
+  box-shadow: 
+    inset 2px 2px 0px #5ef07b,
+    inset -2px -2px 0px #1e7a33,
+    0px 3px 0px #0e3517;
+  cursor: pointer;
+  transition: filter 0.12s ease, transform 0.08s ease;
+  user-select: none;
+}
+
+.mc-btn-primary:hover {
+  filter: brightness(1.08);
+  background-color: var(--color-emerald-hover);
+}
+
+.mc-btn-primary:active {
+  transform: translateY(2px);
+  box-shadow: 
+    inset 2px 2px 0px #1e7a33,
+    inset -2px -2px 0px #5ef07b,
+    0px 1px 0px #0e3517;
+}
+
+/* Secondary Button: Dark Spruce Wood */
+.mc-btn-secondary {
+  background-color: var(--color-wood-frame);
+  color: var(--color-text-title);
+  font-family: var(--font-pixel), monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 2px solid var(--color-wood-border-dark);
+  box-shadow: 
+    inset 2px 2px 0px var(--color-wood-highlight),
+    inset -2px -2px 0px var(--color-wood-shadow),
+    0px 3px 0px #1a120c;
+  cursor: pointer;
+  transition: filter 0.12s ease, transform 0.08s ease, border-color 0.12s ease;
+  user-select: none;
+}
+
+.mc-btn-secondary:hover {
+  filter: brightness(1.15);
+  border-color: var(--color-lantern-gold);
+}
+
+.mc-btn-secondary:active {
+  transform: translateY(2px);
+  box-shadow: 
+    inset 2px 2px 0px var(--color-wood-shadow),
+    inset -2px -2px 0px var(--color-wood-highlight),
+    0px 1px 0px #1a120c;
+}
+
+/* Inventory Tag / Pill Badge */
+.mc-tag {
+  background-color: var(--color-slot-bg);
+  border: 1px solid var(--color-card-border);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Minecraft Inventory Tooltip */
+.mc-tooltip {
+  background-color: #100010;
+  border: 2px solid #28004b;
+  box-shadow: 
+    inset 1px 1px 0px #4d0080,
+    0px 4px 14px rgba(0, 0, 0, 0.85);
+  padding: 8px 12px;
+  border-radius: 2px;
+  z-index: 100;
+}
+
+/* Pixel Art Rendering */
+.pixelated {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Hanging Signs Sway Physics */
+.mc-sway-container {
+  transform-origin: top center;
+  animation: mc-sway 6s ease-in-out infinite;
+}
+
+@keyframes mc-sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(0.4deg);
+  }
+  70% {
+    transform: rotate(-0.35deg);
+  }
+}
+
+/* Custom Minecraft Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #141312;
+  border: 1px solid #30251d;
+}
+::-webkit-scrollbar-thumb {
+  background: #493421;
+  border: 2px solid #6b4d32;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6b4d32;
+}
+
+/* Focus Visible Minecraft Gold Outline */
+*:focus-visible {
+  outline: 2px solid var(--color-lantern-gold) !important;
+  outline-offset: 2px;
+}
+
+/* Pixel Heading Utilities */
+.font-pixel {
+  font-family: var(--font-pixel), monospace;
+}
