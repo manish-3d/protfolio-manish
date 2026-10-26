@@ -110,11 +110,10 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
                 <button
                   key={tab}
                   onClick={() => handleTabChange(tab)}
-                  className={`px-3 py-1.5 font-pixel text-xs rounded transition-all ${
-                    isActive
+                  className={`px-3 py-1.5 font-pixel text-xs rounded transition-all ${isActive
                       ? "bg-[#252320] text-[#8DE6A0] border border-[#36C653] shadow-inner"
                       : "mc-card-inset text-[#C8C0B3] hover:text-[#F4F0E8] hover:bg-[#252320]"
-                  }`}
+                    }`}
                 >
                   {tab}
                 </button>
@@ -153,11 +152,10 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
                           sound.playItemPop();
                           setActiveScreenshotIdx(idx);
                         }}
-                        className={`w-3 h-3 rounded-full border transition-all ${
-                          activeScreenshotIdx === idx
+                        className={`w-3 h-3 rounded-full border transition-all ${activeScreenshotIdx === idx
                             ? "bg-[#36C653] border-[#1e7a33] scale-110"
                             : "bg-[#252320] border-[#38342e]"
-                        }`}
+                          }`}
                         aria-label={`View screenshot ${idx + 1}`}
                       />
                     ))}
