@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { sound } from "@/lib/soundService";
 import { STACK_ITEMS, StackItem } from "@/data/portfolioData";
+import { BrandIcon } from "@/components/ui/BrandIcons";
 
 export default function TechStackPage() {
   const [inspectedItem, setInspectedItem] = useState<StackItem | null>(STACK_ITEMS[0]);
@@ -40,13 +41,12 @@ export default function TechStackPage() {
                   : "hover:border-[#8DE6A0] hover:bg-[#1a1815]"
               }`}
             >
-              <div className="w-10 h-10 rounded mc-inventory-slot flex-shrink-0">
-                <span
-                  className="font-pixel text-sm font-bold group-hover:scale-110 transition-transform"
-                  style={{ color: item.color }}
-                >
-                  {item.symbol}
-                </span>
+              <div className="w-10 h-10 rounded mc-inventory-slot flex-shrink-0 flex items-center justify-center p-1.5 bg-[#0e0d0c]">
+                <BrandIcon
+                  id={item.id}
+                  size={24}
+                  className="group-hover:scale-110 transition-transform filter drop-shadow"
+                />
               </div>
               <div className="min-w-0 flex-1">
                 <p className="font-pixel text-xs text-[#F4F0E8] font-bold group-hover:text-[#8DE6A0] transition-colors truncate">
@@ -97,13 +97,12 @@ export default function TechStackPage() {
             <div className="mc-tooltip space-y-3 p-4">
               {/* Item Header */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded mc-inventory-slot flex-shrink-0 bg-[#0b0a09]">
-                  <span
-                    className="font-pixel text-base font-bold"
-                    style={{ color: inspectedItem.color }}
-                  >
-                    {inspectedItem.symbol}
-                  </span>
+                <div className="w-12 h-12 rounded mc-inventory-slot flex-shrink-0 bg-[#0b0a09] flex items-center justify-center p-2">
+                  <BrandIcon
+                    id={inspectedItem.id}
+                    size={28}
+                    className="filter drop-shadow"
+                  />
                 </div>
                 <div>
                   <h4 className="font-pixel text-base text-[#F5C66B] font-bold">
