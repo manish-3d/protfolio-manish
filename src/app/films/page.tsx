@@ -7,11 +7,12 @@ import { FILMS, Film } from "@/data/portfolioData";
 import VideoModal from "@/components/modals/VideoModal";
 import { Play } from "lucide-react";
 
-type FilmCategory = "All" | "Project Demos" | "Tutorials" | "Vlogs";
+type FilmCategory = "All" | "Project Demos";
 
 export default function FilmsPage() {
   const [selectedCategory, setSelectedCategory] = useState<FilmCategory>("All");
   const [activeFilm, setActiveFilm] = useState<Film | null>(null);
+  const [inlinePlaying, setInlinePlaying] = useState<boolean>(true);
 
   const filteredFilms = FILMS.filter((f) => {
     return selectedCategory === "All" || f.category === selectedCategory;
@@ -41,12 +42,12 @@ export default function FilmsPage() {
           </h1>
         </div>
         <p className="text-xs sm:text-sm text-[#8E8A82] mt-1">
-          Project demos, walkthroughs and tutorials.
+          Full-stack project walkthroughs and architectural demos.
         </p>
 
         {/* Filter Bar */}
         <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-[#38342e]">
-          {(["All", "Project Demos", "Tutorials", "Vlogs"] as FilmCategory[]).map((cat) => {
+          {(["All", "Project Demos"] as FilmCategory[]).map((cat) => {
             const isActive = selectedCategory === cat;
             return (
               <button
@@ -65,48 +66,96 @@ export default function FilmsPage() {
         </div>
       </div>
 
-      {/* Featured Large Video Card */}
+      {/* Featured Large Video Player / Card */}
       {featuredFilm && (
-        <div
-          onClick={() => handleOpenVideo(featuredFilm)}
-          onMouseEnter={() => sound.playItemPop()}
-          className="mc-panel-wood p-4 sm:p-6 bg-[#1c1b19] hover:border-[#f5c66b] transition-all cursor-pointer group rounded"
-        >
-          <div className="relative w-full h-64 sm:h-80 md:h-96 rounded overflow-hidden mc-card-inset border-2 border-[#493421] bg-[#141312] mb-4">
-            <Image
-              src={featuredFilm.thumbnail}
-              alt={featuredFilm.title}
-              fill
-              priority
-              className="object-cover object-center pixelated group-hover:scale-105 transition-transform duration-300"
-            />
-            {/* Center Play Button Overlay */}
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#f5c66b] text-[#141312] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                <Play size={28} fill="#141312" className="ml-1" />
-              </div>
-            </div>
-            {/* Duration Tag */}
-            <div className="absolute top-3 right-3">
-              <span className="mc-tag text-xs bg-[#141312]/90 border-[#f5c66b] text-[#f5c66b] font-bold py-1 px-2.5">
-                ⏱️ {featuredFilm.duration}
+        <div className="mc-panel-wood p-4 sm:p-6 bg-[#1c1b19] space-y-4 rounded">
+          <div className="flex items-center justify-between pb-2 border-b border-[#38342e]">
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#36C653] animate-pulse" />
+              <span className="font-pixel text-xs text-[#8DE6A0] tracking-wider uppercase">
+                Featured Cinema Screen &bull; {featuredFilm.duration}
               </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => {
+                  sound.playWoodClick();
+                  setInlinePlaying(!inlinePlaying);
+                }}
+                className="mc-card-inset px-2.5 py-1 text-xs text-[#C8C0B3] hover:text-[#F4F0E8]"
+              >
+                {inlinePlaying ? "Show Poster" : "Play Screen"}
+              </button>
+              {featuredFilm.htmlUrl && (
+                <a
+                  href={featuredFilm.htmlUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => sound.playWoodClick()}
+                  className="mc-card-inset px-2.5 py-1 text-xs text-[#38bdf8] hover:underline"
+                >
+                  Fullscreen ↗
+                </a>
+              )}
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          {/* Player Viewport */}
+          <div className="relative w-full aspect-video rounded overflow-hidden mc-card-inset border-2 border-[#493421] bg-black">
+            {inlinePlaying && (featuredFilm.htmlUrl || featuredFilm.isHtmlFilm) ? (
+              <iframe
+                src={featuredFilm.htmlUrl || featuredFilm.videoUrl}
+                title={featuredFilm.title}
+                className="w-full h-full border-0"
+                allow="fullscreen; autoplay; audio"
+              />
+            ) : (
+              <div
+                onClick={() => {
+                  sound.playWoodClick();
+                  setInlinePlaying(true);
+                }}
+                className="relative w-full h-full cursor-pointer group"
+              >
+                <Image
+                  src={featuredFilm.thumbnail}
+                  alt={featuredFilm.title}
+                  fill
+                  priority
+                  className="object-cover object-center pixelated group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#f5c66b] text-[#141312] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                    <Play size={28} fill="#141312" className="ml-1" />
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3 bg-[#141312]/90 border border-[#f5c66b]/40 px-3 py-1.5 rounded">
+                  <p className="font-pixel text-xs text-[#f5c66b]">
+                    Click to Play Interactive 3D Launch Film
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
             <div>
-              <h2 className="font-pixel text-xl sm:text-2xl text-[#F4F0E8] font-bold group-hover:text-[#F5C66B] transition-colors">
+              <h2 className="font-pixel text-xl sm:text-2xl text-[#F4F0E8] font-bold">
                 {featuredFilm.title}
               </h2>
               <p className="text-xs sm:text-sm text-[#8E8A82] mt-0.5">
                 {featuredFilm.subtitle}
               </p>
             </div>
-            <button className="mc-btn-primary text-xs py-2 px-4 self-start sm:self-auto">
-              <span>Watch Demo</span>
-              <span>&rarr;</span>
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => handleOpenVideo(featuredFilm)}
+                className="mc-btn-primary text-xs py-2 px-4 flex items-center gap-1.5"
+              >
+                <Play size={13} fill="#141312" />
+                <span>Theater Modal</span>
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -141,7 +190,7 @@ export default function FilmsPage() {
                   </div>
                 </div>
 
-                <h3 className="font-pixel text-base text-[#F4F0E8] font-bold group-hover:text-[#F5C66B] transition-colors">
+                <h3 className="font-pixel text-sm text-[#F4F0E8] font-bold group-hover:text-[#F5C66B] transition-colors">
                   {film.title}
                 </h3>
                 <p className="text-xs text-[#8E8A82] mt-0.5">
@@ -149,16 +198,20 @@ export default function FilmsPage() {
                 </p>
               </div>
 
-              <div className="mt-3 pt-2 border-t border-[#38342e] flex items-center justify-between text-xs text-[#F5C66B]">
-                <span>Click to stream</span>
-                <span>&rarr;</span>
+              <div className="pt-3 mt-3 border-t border-[#38342e] flex items-center justify-between">
+                <span className="text-[11px] text-[#8E8A82]">
+                  {film.category}
+                </span>
+                <span className="font-pixel text-xs text-[#36C653] group-hover:translate-x-1 transition-transform">
+                  Watch &rarr;
+                </span>
               </div>
             </div>
           ))}
         </div>
       )}
 
-      {/* Modal Player */}
+      {/* Video Modal Player */}
       <VideoModal film={activeFilm} onClose={() => setActiveFilm(null)} />
     </div>
   );
