@@ -7,7 +7,7 @@ import { sound } from "@/lib/soundService";
 import { PROJECTS } from "@/data/portfolioData";
 import { Search } from "lucide-react";
 
-type CategoryFilter = "All" | "Web" | "IoT" | "AI" | "3D" | "Other";
+type CategoryFilter = "All" | "Full Stack";
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("All");
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
               </h1>
             </div>
             <p className="text-xs sm:text-sm text-[#8E8A82] mt-1">
-              Things I&apos;ve built and shipped.
+              Full-stack applications I&apos;ve built and shipped.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ export default function ProjectsPage() {
 
         {/* Filter Pills Bar */}
         <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-[#38342e]">
-          {(["All", "Web", "IoT", "AI", "3D", "Other"] as CategoryFilter[]).map((cat) => {
+          {(["All", "Full Stack"] as CategoryFilter[]).map((cat) => {
             const isActive = selectedCategory === cat;
             return (
               <button
@@ -100,10 +100,16 @@ export default function ProjectsPage() {
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-200 pixelated"
                   />
-                  <div className="absolute top-2 right-2">
+                  <div className="absolute top-2 right-2 flex items-center gap-1.5">
                     <span className="mc-tag text-[10px] bg-[#141312]/90 border-[#36C653]/40 text-[#8DE6A0] font-bold">
                       {project.category}
                     </span>
+                    {project.liveUrl && (
+                      <span className="mc-tag text-[10px] bg-[#141312]/90 border-[#36C653]/60 text-[#36C653] flex items-center gap-1 font-pixel">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#36C653] animate-pulse" />
+                        Live
+                      </span>
+                    )}
                   </div>
                 </div>
 
