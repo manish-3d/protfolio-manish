@@ -33,19 +33,19 @@ export default function AboutMePanel() {
           </p>
         </div>
 
-        {/* 3 Quick Inset Badges */}
-        <div className="grid grid-cols-3 gap-2 my-3">
-          <div className="mc-card-inset p-1.5 text-center bg-[#141312]">
-            <p className="font-pixel text-xs text-[#F4F0E8] font-bold">22</p>
-            <p className="text-[10px] text-[#8E8A82]">Years</p>
+        {/* Quick Highlights */}
+        <div className="space-y-2 my-3">
+          <div className="mc-card-inset p-2 bg-[#141312] flex items-center justify-between text-xs">
+            <span className="text-[#8E8A82]">Branch:</span>
+            <span className="font-pixel text-[#36C653] font-bold">B.Tech CSE @ NIET</span>
           </div>
-          <div className="mc-card-inset p-1.5 text-center bg-[#141312]">
-            <p className="font-pixel text-[11px] text-[#36C653] font-bold">CSE (IoT)</p>
-            <p className="text-[10px] text-[#8E8A82]">NIET</p>
+          <div className="mc-card-inset p-2 bg-[#141312] flex items-center justify-between text-xs">
+            <span className="text-[#8E8A82]">Focus:</span>
+            <span className="font-pixel text-[#8DE6A0] font-bold">Full Stack Web</span>
           </div>
-          <div className="mc-card-inset p-1.5 text-center bg-[#141312]">
-            <p className="font-pixel text-xs text-[#ef4444] font-bold">📍 India</p>
-            <p className="text-[10px] text-[#8E8A82]">Home</p>
+          <div className="mc-card-inset p-2 bg-[#141312] flex items-center justify-between text-xs">
+            <span className="text-[#8E8A82]">Status:</span>
+            <span className="font-pixel text-[#F5C66B] font-bold">Available for Roles</span>
           </div>
         </div>
       </div>
