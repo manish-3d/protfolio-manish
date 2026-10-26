@@ -5,19 +5,21 @@ import Link from "next/link";
 import { sound } from "@/lib/soundService";
 import { useLighting } from "@/context/LightingContext";
 
+import { BrandIcon } from "@/components/ui/BrandIcons";
+
 interface SignItem {
-  icon: string;
+  iconId: string;
   label: string;
   href: string;
   isExternal?: boolean;
 }
 
 const SIGNS: SignItem[] = [
-  { icon: "⛏️", label: "Build Projects", href: "/projects" },
-  { icon: "🪶", label: "Write & Share", href: "/blog" },
-  { icon: "📖", label: "Learn & Document", href: "/docs" },
-  { icon: "🧭", label: "Open Source", href: "https://github.com", isExternal: true },
-  { icon: "📦", label: "Keep Exploring", href: "/stack" },
+  { iconId: "github", label: "GitHub Profile", href: "https://github.com/manish-3d", isExternal: true },
+  { iconId: "leetcode", label: "LeetCode Profile", href: "https://leetcode.com/u/manixshsg/", isExternal: true },
+  { iconId: "linkedin", label: "LinkedIn Profile", href: "https://www.linkedin.com/in/manish-kumar-85904b3a2/", isExternal: true },
+  { iconId: "x", label: "X / Twitter", href: "https://x.com/realDijkstra", isExternal: true },
+  { iconId: "resume", label: "View Resume", href: "/resume", isExternal: false },
 ];
 
 export default function HangingSigns() {
@@ -87,7 +89,9 @@ export default function HangingSigns() {
             <div className="relative group">
               <div className="w-52 md:w-56 py-2 px-3.5 bg-[#493421] hover:bg-[#5c4228] border-2 border-[#30251d] hover:border-[#f5c66b] rounded shadow-md transition-all duration-150 transform hover:translate-x-1 flex items-center justify-between text-left">
                 <div className="flex items-center gap-2.5">
-                  <span className="text-base filter drop-shadow">{sign.icon}</span>
+                  <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+                    <BrandIcon id={sign.iconId} size={18} className="text-[#F4F0E8] group-hover:scale-110 transition-transform" />
+                  </div>
                   <span className="font-pixel text-xs text-[#F4F0E8] font-bold tracking-wide group-hover:text-[#F5C66B] transition-colors">
                     {sign.label}
                   </span>
