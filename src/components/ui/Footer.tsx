@@ -5,7 +5,7 @@ import Link from "next/link";
 import { sound } from "@/lib/soundService";
 import { PROFILE_DATA } from "@/data/portfolioData";
 import { ArrowUp } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon, MailIcon } from "@/components/ui/SocialIcons";
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon, MailIcon } from "@/components/ui/SocialIcons";
 
 export default function Footer() {
   const [year, setYear] = React.useState<number>(2026);
@@ -49,7 +49,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               onClick={() => sound.playWoodClick()}
               className="p-2 mc-card-inset text-[#C8C0B3] hover:text-[#36C653] hover:border-[#36C653] transition-all rounded"
-              title="GitHub"
+              title="GitHub (@manish-3d)"
             >
               <GithubIcon size={18} />
             </a>
@@ -59,9 +59,19 @@ export default function Footer() {
               rel="noopener noreferrer"
               onClick={() => sound.playWoodClick()}
               className="p-2 mc-card-inset text-[#C8C0B3] hover:text-[#38bdf8] hover:border-[#38bdf8] transition-all rounded"
-              title="LinkedIn"
+              title="LinkedIn (@manish-kumar-85904b3a2)"
             >
               <LinkedinIcon size={18} />
+            </a>
+            <a
+              href={PROFILE_DATA.socials.leetcode}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => sound.playWoodClick()}
+              className="p-2 mc-card-inset text-[#C8C0B3] hover:text-[#FFA116] hover:border-[#FFA116] transition-all rounded"
+              title="LeetCode (@manixshsg)"
+            >
+              <LeetcodeIcon size={18} />
             </a>
             <a
               href={PROFILE_DATA.socials.twitter}
@@ -69,7 +79,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               onClick={() => sound.playWoodClick()}
               className="p-2 mc-card-inset text-[#C8C0B3] hover:text-[#60a5fa] hover:border-[#60a5fa] transition-all rounded"
-              title="Twitter"
+              title="X / Twitter (@realDijkstra)"
             >
               <TwitterIcon size={18} />
             </a>
@@ -97,7 +107,7 @@ export default function Footer() {
 
         {/* Bottom Metadata */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#8E8A82] gap-2">
-          <p>© {year} Manish Kumar — Crafted with passion for Web, IoT & Systems.</p>
+          <p>© {year} Manish Kumar — Built with passion for Full Stack Web & Systems.</p>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">
               <span className="inline-block w-2 h-2 rounded-full bg-[#36C653] animate-pulse"></span>
