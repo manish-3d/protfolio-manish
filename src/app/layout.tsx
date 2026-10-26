@@ -27,7 +27,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Manish Kumar | The Builder's World (Minecraft Developer Portfolio)",
-  description: "B.Tech CSE (IoT) student at NIET. Building real projects, learning in public, and exploring AI, Web, and Embedded Systems.",
+  description: "B.Tech CSE student at NIET. Full-stack web developer building real projects with Next.js, Node.js, and PostgreSQL.",
   icons: {
     icon: "/favicon.ico",
   },

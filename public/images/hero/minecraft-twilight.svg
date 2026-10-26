@@ -1,0 +1,385 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1365 768" role="img" aria-labelledby="title description" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
+  <title id="title">Twilight block-world valley</title>
+  <desc id="description">A detailed vector landscape with a crescent moon, floating islands, a blocky mountain waterfall, a winding river, spruce forest and a warm wooden cabin at night.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#07112f"/>
+      <stop offset=".43" stop-color="#142d60"/>
+      <stop offset=".72" stop-color="#304b7c"/>
+      <stop offset=".88" stop-color="#ce7956"/>
+      <stop offset="1" stop-color="#f0a052"/>
+    </linearGradient>
+    <linearGradient id="haze" x2="0" y2="1">
+      <stop stop-color="#5376a4" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#e6a16a" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#f9bd69" stop-opacity=".48"/>
+    </linearGradient>
+    <linearGradient id="stoneFace" x2="1" y2=".8">
+      <stop stop-color="#9ba1ac"/>
+      <stop offset=".28" stop-color="#6f7788"/>
+      <stop offset=".68" stop-color="#454c5d"/>
+      <stop offset="1" stop-color="#252d3d"/>
+    </linearGradient>
+    <linearGradient id="stoneShadow" x2="1" y2=".5">
+      <stop stop-color="#4e5668"/>
+      <stop offset="1" stop-color="#202a39"/>
+    </linearGradient>
+    <linearGradient id="water" x2="0" y2="1">
+      <stop stop-color="#b3e8ff"/>
+      <stop offset=".22" stop-color="#4ab7ff"/>
+      <stop offset=".72" stop-color="#2875d2"/>
+      <stop offset="1" stop-color="#163a8b"/>
+    </linearGradient>
+    <linearGradient id="river" x2=".7" y2="1">
+      <stop stop-color="#2675ce"/>
+      <stop offset=".45" stop-color="#174caa"/>
+      <stop offset="1" stop-color="#102b71"/>
+    </linearGradient>
+    <linearGradient id="woodWall" x2="0" y2="1">
+      <stop stop-color="#79502c"/>
+      <stop offset=".45" stop-color="#56351f"/>
+      <stop offset="1" stop-color="#332117"/>
+    </linearGradient>
+    <radialGradient id="sunGlow">
+      <stop stop-color="#ffdc7a" stop-opacity=".9"/>
+      <stop offset=".35" stop-color="#ffad50" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#f77449" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonGlow">
+      <stop stop-color="#bdeaff" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#a8ddff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lanternGlow">
+      <stop stop-color="#fff3a6" stop-opacity=".9"/>
+      <stop offset=".25" stop-color="#ffbd55" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#ff9a30" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="stoneTiles" width="48" height="40" patternUnits="userSpaceOnUse">
+      <rect width="48" height="40" fill="#596273"/>
+      <path d="M0 2h21v3H0zm25 2h23v2H25zM2 21h18v2H2zm23-1h23v3H25z" fill="#9299a5" opacity=".44"/>
+      <path d="M1 8h2v11H1zm22-5h2v15h-2zM21 24h3v14h-3zM0 37h20v2H0zm27-12h2v12h-2z" fill="#303949" opacity=".62"/>
+      <path d="M6 12h8v3H6zm28 15h9v3h-9zM31 7h6v2h-6z" fill="#c0c1bf" opacity=".18"/>
+    </pattern>
+    <pattern id="grassTop" width="32" height="24" patternUnits="userSpaceOnUse">
+      <rect width="32" height="24" fill="#344b2c"/>
+      <path d="M0 1h11v4H0zm15 1h9v3h-9zm12 0h5v5h-5zM3 9h5v3H3zm13 2h12v3H16zM0 19h8v3H0zm22-3h7v3h-7z" fill="#527540"/>
+      <path d="M10 7h4v3h-4zm16 8h5v3h-5zM8 17h9v2H8z" fill="#253d28"/>
+      <path d="M2 6h3v2H2zm20 1h5v2h-5zM13 20h5v2h-5z" fill="#8a9850" opacity=".55"/>
+    </pattern>
+    <pattern id="leaves" width="40" height="36" patternUnits="userSpaceOnUse">
+      <rect width="40" height="36" fill="#1d402e"/>
+      <path d="M0 0h13v10H0zm17 3h11v9H17zm13-2h10v13H30zM3 15h9v12H3zm14 1h14v9H17zm13 8h10v11H30zM0 30h12v6H0zm14-3h13v9H14z" fill="#28543a"/>
+      <path d="M2 2h6v4H2zm19 4h5v3h-5zm12 1h5v5h-5zM6 18h4v5H6zm16 1h7v4h-7zm-5 9h8v6h-8z" fill="#47704a" opacity=".7"/>
+      <path d="M10 9h5v3h-5zm14 6h4v3h-4zM1 27h5v3H1zm31 5h5v2h-5z" fill="#142f25"/>
+    </pattern>
+    <pattern id="bark" width="28" height="44" patternUnits="userSpaceOnUse">
+      <rect width="28" height="44" fill="#382718"/>
+      <path d="M2 0h7v12H2zm13 3h5v15h-5zM3 21h4v19H3zm12 2h9v7h-9zm-1 14h6v7h-6z" fill="#563a24"/>
+      <path d="M10 2h2v12h-2zm12 20h3v12h-3zM8 27h2v9H8z" fill="#241b16"/>
+    </pattern>
+    <pattern id="planks" width="64" height="32" patternUnits="userSpaceOnUse">
+      <rect width="64" height="32" fill="#5b3922"/>
+      <path d="M0 1h64v2H0zm0 15h64v2H0zm0 14h64v2H0z" fill="#9a6938" opacity=".65"/>
+      <path d="M0 4h18v11H0zm21 0h23v11H21zm27 0h16v11H48zM3 19h27v10H3zm31 0h27v10H34z" fill="#704725" opacity=".78"/>
+      <path d="M15 7h2v2h-2zm38 2h3v2h-3zM9 23h4v2H9z" fill="#b88345" opacity=".48"/>
+    </pattern>
+    <pattern id="waterShimmer" width="58" height="25" patternUnits="userSpaceOnUse">
+      <rect width="58" height="25" fill="none"/>
+      <path d="M2 5h18v2H2zm27 4h21v2H29zM10 17h13v2H10zm34 3h12v2H44z" fill="#b4eaff" opacity=".52"/>
+      <path d="M23 2h5v2h-5zm-8 9h8v2h-8zm31-7h7v2h-7z" fill="#fff" opacity=".42"/>
+    </pattern>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="tinyGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <symbol id="spruce" viewBox="0 0 100 160">
+      <path d="M44 104h17v54H44z" fill="url(#bark)"/>
+      <path d="M52 0 30 31h11L19 59h14L8 89h28L20 111h63L67 88h27L70 58h12L62 30h9z" fill="#173d2d"/>
+      <path d="M52 3 33 30h13L24 56h17L15 85h25L27 105h27V4z" fill="url(#leaves)"/>
+      <path d="M52 4v101h27L66 84h28L70 55h12L61 29h10z" fill="#0c2b22" opacity=".5"/>
+      <path d="M48 15h7v3h-7zM31 54h11v4H31zm24 23h14v4H55zM26 91h13v4H26z" fill="#52724a" opacity=".65"/>
+    </symbol>
+    <symbol id="oak" viewBox="0 0 120 150">
+      <path d="M50 83h22v67H50z" fill="url(#bark)"/>
+      <path d="M59 4h34v18h20v28h-14v19H84v19H43V76H24V57H6V32h20V15h33z" fill="#173b28"/>
+      <path d="M60 3h30v17h18v28H93v17H78v19H43V72H25V53H9V34h20V18h31z" fill="url(#leaves)"/>
+      <path d="M60 3v76h18V60h15V47h15V20H90V3z" fill="#0f2d21" opacity=".48"/>
+      <path d="M34 23h17v8H34zm42 5h19v7H76zM19 40h17v8H19zm54 30h14v7H73z" fill="#537248" opacity=".63"/>
+    </symbol>
+  </defs>
+
+  <!-- Deep blue sky and the last warm band of twilight -->
+  <rect width="1365" height="768" fill="url(#sky)"/>
+  <rect y="250" width="1365" height="250" fill="url(#haze)"/>
+  <path d="M0 96h1365v4H0zm0 48h1365v3H0zm0 92h1365v2H0z" fill="#081a42" opacity=".72"/>
+  <path d="M0 281h1365v3H0zm0 8h1365v1H0z" fill="#f6b16e" opacity=".26"/>
+
+  <!-- Soft light around the square sunset, distant ridge and moon -->
+  <ellipse cx="321" cy="365" rx="230" ry="170" fill="url(#sunGlow)"/>
+  <ellipse cx="322" cy="364" rx="76" ry="75" fill="#ffbd5a" opacity=".17" filter="url(#softGlow)"/>
+  <circle cx="322" cy="364" r="54" fill="#ffda77" opacity=".18" filter="url(#tinyGlow)"/>
+  <circle cx="326" cy="117" r="102" fill="url(#moonGlow)"/>
+
+  <!-- Starfield: crisp pixels, distant glints and tiny constellation marks -->
+  <g fill="#e4f5ff">
+    <rect x="24" y="29" width="3" height="3"/><rect x="80" y="62" width="4" height="4"/>
+    <rect x="129" y="11" width="3" height="3"/><rect x="208" y="48" width="3" height="3"/>
+    <rect x="268" y="25" width="3" height="3"/><rect x="396" y="12" width="3" height="3"/>
+    <rect x="455" y="52" width="4" height="4"/><rect x="528" y="17" width="3" height="3"/>
+    <rect x="590" y="67" width="3" height="3"/><rect x="690" y="34" width="4" height="4"/>
+    <rect x="752" y="9" width="3" height="3"/><rect x="826" y="47" width="3" height="3"/>
+    <rect x="917" y="19" width="4" height="4"/><rect x="1001" y="63" width="3" height="3"/>
+    <rect x="1084" y="26" width="3" height="3"/><rect x="1166" y="4" width="3" height="3"/>
+    <rect x="1248" y="43" width="4" height="4"/><rect x="1330" y="21" width="3" height="3"/>
+    <rect x="41" y="170" width="3" height="3"/><rect x="95" y="231" width="4" height="4"/>
+    <rect x="174" y="194" width="3" height="3"/><rect x="241" y="272" width="3" height="3"/>
+    <rect x="410" y="221" width="3" height="3"/><rect x="472" y="180" width="3" height="3"/>
+    <rect x="563" y="129" width="4" height="4"/><rect x="663" y="203" width="3" height="3"/>
+    <rect x="744" y="176" width="3" height="3"/><rect x="866" y="144" width="4" height="4"/>
+    <rect x="952" y="228" width="3" height="3"/><rect x="1035" y="187" width="3" height="3"/>
+    <rect x="1119" y="245" width="4" height="4"/><rect x="1290" y="213" width="3" height="3"/>
+    <rect x="1337" y="148" width="4" height="4"/><rect x="727" y="81" width="3" height="3"/>
+    <rect x="1127" y="91" width="3" height="3"/><rect x="349" y="74" width="3" height="3"/>
+    <rect x="605" y="39" width="3" height="3"/><rect x="979" y="78" width="3" height="3"/>
+  </g>
+  <g fill="#71dfff">
+    <path d="M75 53h3v8h-3zM72 56h9v3h-9z"/><path d="M509 88h3v9h-3zM506 91h9v3h-9z"/>
+    <path d="M752 25h3v10h-3zM749 28h9v3h-9z"/><path d="M901 62h3v9h-3zM898 65h9v3h-9z"/>
+    <path d="M1198 173h3v9h-3zM1195 176h9v3h-9z"/><path d="M226 153h3v8h-3zM223 156h9v3h-9z"/>
+  </g>
+  <g fill="#ffd778">
+    <rect x="146" y="53" width="6" height="6"/><rect x="437" y="107" width="5" height="5"/>
+    <rect x="501" y="202" width="4" height="4"/><rect x="854" y="91" width="5" height="5"/>
+    <rect x="1049" y="119" width="4" height="4"/><rect x="1283" y="87" width="5" height="5"/>
+    <rect x="594" y="22" width="4" height="4"/><rect x="342" y="198" width="4" height="4"/>
+  </g>
+  <g fill="#97a9d5" opacity=".7">
+    <rect x="138" y="78" width="2" height="14"/><rect x="132" y="84" width="14" height="2"/>
+    <rect x="798" y="119" width="2" height="15"/><rect x="792" y="125" width="14" height="2"/>
+    <rect x="974" y="33" width="2" height="13"/><rect x="969" y="38" width="12" height="2"/>
+    <rect x="524" y="148" width="2" height="13"/><rect x="519" y="153" width="12" height="2"/>
+  </g>
+
+  <!-- Pixel crescent moon -->
+  <path d="M326 76h16v6h-10v6h-7v7h-6v13h-6v19h6v12h7v7h10v6h-19v-6h-8v-7h-7v-11h-5V96h5V85h7v-7h8v-2z" fill="#d5edff"/>
+  <path d="M333 83h8v5h-8v7h-6v10h-5v24h5v9h7v7h-11v-5h-7v-8h-5v-32h5v-9h7v-6h8z" fill="#f4f6ec"/>
+  <path d="M305 94h5v7h-5zm5 34h6v7h-6zm15-48h9v4h-9z" fill="#a8cbe7"/>
+  <rect x="337" y="103" width="4" height="4" fill="#fff" opacity=".76"/>
+
+  <!-- Distant layered mountains and square sun -->
+  <path d="M0 414 83 356l42 34 57-83 38 38 59-63 57 48 59-65 71 91 57-44 57 55 58-76 70 70 77-57 84 78 88-69 95 56 77-42 111 57v185H0z" fill="#273b63" opacity=".78"/>
+  <path d="m0 443 69-56 43 24 47-50 39 33 74-67 40 40 52-38 41 42 46-37 59 67 45-32 56 46 64-38 60 45 72-44 53 50 69-30 77 50 74-36 96 42v170H0z" fill="#594b56"/>
+  <path d="m43 427 26-40 23 13 17 19-22-6-13 8zm151-39 48-61 24 24-28-11-21 31zm168-20 33-41 20 19-25-5zm96 5 42-35 23 27-28-14-15 19zM710 402l39-51 25 25-27-10-17 22zm163 10 36-43 21 22-27-9-14 18zm171-1 44-34 28 28-31-14-20 20z" fill="#82706b" opacity=".8"/>
+  <path d="m57 390 12-16 10 9-10-2zm181-55 17 14-16-6zm275 26 14-15 16 15-19-8zm380 23 15-18 13 17-17-9z" fill="#b49a87" opacity=".55"/>
+  <rect x="284" y="350" width="77" height="77" fill="#ffc75b"/>
+  <rect x="292" y="358" width="61" height="61" fill="#fff0a2"/>
+  <rect x="300" y="366" width="45" height="45" fill="#fff9c5"/>
+  <path d="M284 350h8v8h-8zm69 0h8v8h-8zM284 419h8v8h-8zm69 0h8v8h-8z" fill="#ffe58b"/>
+
+  <!-- Floating grass-and-stone sky islands -->
+  <g>
+    <path d="M108 223h18v-9h17v-7h30v9h18v12h13v24h-18l-7 12h-51l-9-10h-19v-20h8z" fill="#382d30"/>
+    <path d="M111 224h18v-10h19v-7h26v9h19v10h13v15h-18l-8 11h-47l-9-9h-17v-12h4z" fill="#79553a"/>
+    <path d="M108 223h18v-9h17v-7h30v9h18v12h13v8h-96z" fill="url(#grassTop)"/>
+    <path d="M124 239h13v10h-13zm23 1h18v10h-18zm28-2h17v11h-17z" fill="url(#stoneTiles)"/>
+    <path d="M153 205h12v17h-12z" fill="url(#bark)"/><path d="M134 196h24v13h-10v9h-14zm15-9h19v14h-7v8h-12z" fill="url(#leaves)"/>
+  </g>
+  <g>
+    <path d="M1064 85h27V71h22V61h35v11h21v12h18v29h-20l-10 17h-57l-12-13h-24z" fill="#252b3b"/>
+    <path d="M1068 83h24V69h21V59h32v11h23v13h16v24h-20l-10 15h-51l-11-11h-24z" fill="#815338"/>
+    <path d="M1064 84h27V71h22V61h35v11h21v12h18v7h-123z" fill="url(#grassTop)"/>
+    <path d="M1090 101h19v14h-19zm28 1h17v15h-17zm26-1h20v15h-20z" fill="url(#stoneTiles)"/>
+    <path d="M1112 60h13v22h-13z" fill="url(#bark)"/><path d="M1094 48h28v15h-10v11h-18zm18-10h24v17h-8v9h-16z" fill="url(#leaves)"/>
+  </g>
+  <g>
+    <path d="M1182 180h25v-12h22v-10h37v12h23v14h17v30h-21l-10 17h-59l-11-13h-23z" fill="#252b3b"/>
+    <path d="M1185 178h24v-12h22v-10h34v11h23v14h17v24h-21l-10 16h-53l-12-11h-24z" fill="#71503d"/>
+    <path d="M1182 180h25v-12h22v-10h37v12h23v14h17v7h-124z" fill="url(#grassTop)"/>
+    <path d="M1206 197h18v14h-18zm28 1h18v14h-18zm29-1h18v14h-18z" fill="url(#stoneTiles)"/>
+    <path d="M1233 156h13v22h-13z" fill="url(#bark)"/><path d="M1216 146h29v13h-10v11h-19zm18-10h24v17h-8v8h-16z" fill="url(#leaves)"/>
+  </g>
+  <g>
+    <path d="M1298 72h23V58h23V46h35v14h20v14h18v30h-21l-9 17h-58l-12-12h-21z" fill="#262b3b"/>
+    <path d="M1301 70h21V56h23V44h31v14h23v14h17v24h-20l-10 15h-53l-12-11h-20z" fill="#785239"/>
+    <path d="M1298 72h23V58h23V46h35v14h20v14h18v7h-119z" fill="url(#grassTop)"/>
+    <path d="M1324 89h18v14h-18zm29 2h17v14h-17zm27-1h18v15h-18z" fill="url(#stoneTiles)"/>
+  </g>
+
+  <!-- Main cliff range: stepped grass shelves over a tall shaded stone face -->
+  <path d="M400 768V414l30-21 16-67 17 13 15-85 20 15 24-37 20 25 13 54 30-24 19 14 17-19 18 15 20 29 24-22 17 24 22-14 24 27 18-17 23 21 22-11 27 29 19-16 28 22 22-9 26 24 34-8 37 20 21-12 42 22 28-4 30 23 31-8 42 27v359z" fill="url(#stoneFace)"/>
+  <path d="M420 768V430l23-15 17-82 19 14 15-79 20 11 26-35 20 26 10 48 24-15 23 16 18-18 20 16 19 30 22-15 20 20 21-11 24 23 21-14 25 20 22-10 29 26 17-14 30 23 21-8 26 24 33-6 29 20 22-11 41 23 25-5 32 22 27-7 36 24v337z" fill="url(#stoneTiles)" opacity=".72"/>
+  <path d="m399 415 31-22 17-65 17 13 15-84 20 15 24-37 20 25 13 54-11 5-13-35-12 13-15-20-9 50-14-7-11 55-22-6-12 38z" fill="#b07c4c"/>
+  <path d="m399 414 31-21 17-65 17 13 15-84 20 15 24-37 20 25 13 54-10-17-12-9-11 15-11-21-11 43-17-8-7 40-19-7-9 36z" fill="url(#grassTop)"/>
+  <path d="M530 328h22v-31h16v-39h18v-24h22v19h18v30h24v18h19v30h18v20h-37v-11h-31v-16h-23v-17h-23v21h-27v14h-29z" fill="#7c573a"/>
+  <path d="M530 328h22v-31h16v-39h18v-24h22v19h18v30h24v18h19v30h18v9h-37v-11h-31v-16h-23v-17h-23v21h-27v14h-29z" fill="url(#grassTop)"/>
+  <path d="M617 317h22v-23h18v-37h18v20h20v20h22v24h-21v-11h-23v-14h-22v19h-34z" fill="#73503c"/>
+  <path d="M617 317h22v-23h18v-37h18v20h20v20h22v13h-21v-11h-23v-14h-22v19h-34z" fill="url(#grassTop)"/>
+  <path d="M733 307h26v-18h18v-28h21v18h20v25h24v18h-21v-9h-25v-12h-19v19h-44z" fill="#704b35"/>
+  <path d="M733 307h26v-18h18v-28h21v18h20v25h24v9h-21v-9h-25v-12h-19v19h-44z" fill="url(#grassTop)"/>
+  <path d="M865 330h20v-25h19v-15h21v19h19v22h23v20h-26v-8h-21v-13h-20v18h-35z" fill="#704d38"/>
+  <path d="M865 330h20v-25h19v-15h21v19h19v22h23v10h-26v-8h-21v-13h-20v18h-35z" fill="url(#grassTop)"/>
+
+  <!-- Individual cliff ledges, shadow seams and mineral pixels -->
+  <g fill="#313a4a">
+    <path d="M417 462h25v8h-25zm24 25h18v7h-18zm-17 64h31v8h-31zm28 26h18v7h-18zm-24 59h27v9h-27z"/>
+    <path d="M486 383h20v7h-20zm-8 48h24v9h-24zm31 18h17v8h-17zm-20 88h24v9h-24z"/>
+    <path d="M553 373h26v8h-26zm27 30h19v7h-19zm-16 59h24v9h-24zm30 33h22v8h-22z"/>
+    <path d="M639 359h26v8h-26zm28 27h18v8h-18zm-12 65h27v9h-27zm29 35h18v8h-18z"/>
+    <path d="M721 372h24v9h-24zm24 31h25v8h-25zm-12 53h23v9h-23zm27 40h27v8h-27z"/>
+    <path d="M807 379h25v8h-25zm28 30h23v9h-23zm-17 59h31v8h-31zm34 39h19v8h-19z"/>
+    <path d="M898 398h26v8h-26zm29 35h20v8h-20zm-17 57h27v8h-27zm34 36h23v9h-23z"/>
+    <path d="M1001 423h22v8h-22zm19 39h28v9h-28zm-15 57h24v8h-24z"/>
+  </g>
+  <g fill="#adb0b6" opacity=".62">
+    <path d="M436 402h18v6h-18zm44-49h17v6h-17zm37 25h12v7h-12zm47 20h18v6h-18z"/>
+    <path d="M602 359h17v7h-17zm41 31h18v6h-18zm49 29h19v6h-19zm64-36h15v6h-15z"/>
+    <path d="M821 400h17v6h-17zm41 31h19v6h-19zm52 12h17v6h-17zm53 31h18v6h-18z"/>
+  </g>
+  <g fill="#9b6945">
+    <path d="M441 438h20v8h-20zm63-34h17v7h-17zm43 13h20v8h-20zm73-15h19v7h-19z"/>
+    <path d="M704 421h18v8h-18zm47-26h19v8h-19zm61 37h22v8h-22zm72-7h18v7h-18z"/>
+  </g>
+  <g fill="#293345" opacity=".74">
+    <path d="M450 512h17v24h-17zm34 84h15v26h-15zm61-113h17v29h-17zm39 86h16v24h-16z"/>
+    <path d="M654 473h17v29h-17zm40 78h19v26h-19zm75-91h16v28h-16zm41 92h18v25h-18z"/>
+    <path d="M864 473h15v27h-15zm52 72h17v31h-17zm74-79h14v25h-14zm41 95h18v26h-18z"/>
+  </g>
+
+  <!-- Waterfall: bright stepped source, two cascades and a blue pool -->
+  <path d="M716 301h11v12h8v19h-8v17h-10v18h-8v26h-13v21h-9v36h-13v31h-14v36h-10v30h-12v37h-14v22h-11v31h-14v30h-12v24h-18v-16h12v-31h12v-30h13v-24h13v-29h11v-28h14v-31h9v-35h15v-28h10v-24h12v-25h10v-22h11v-20h7z" fill="url(#water)"/>
+  <path d="M720 304h4v14h7v12h-6v16h-9v21h-9v25h-12v27h-10v32h-11v31h-11v37h-9v27h-11v38h-12v25h-12v31h-12v25h-11v17h-7v-18h10v-27h13v-30h12v-26h12v-29h11v-31h11v-36h13v-30h10v-27h12v-24h9v-22h10v-18h7v-13h4z" fill="url(#waterShimmer)" opacity=".9"/>
+  <path d="M718 306h2v14h6v12h-6v17h-8v20h-8v23h-12v27h-8v26h-11v34h-9v31h-10v34h-7v28h-9v35h-11v27h-10v29h-12v18h-7v-18h9v-26h12v-27h11v-31h12v-29h9v-32h11v-34h9v-29h9v-27h9v-24h8v-20h8v-19h7v-16h5z" fill="#d0f5ff" opacity=".7"/>
+  <path d="M706 351h8v13h-8zm-17 52h10v7h-10zm-23 69h9v9h-9zm-25 72h8v9h-8zm-22 67h10v8h-10z" fill="#f1fcff"/>
+  <path d="M715 379h5v28h-5zm-20 54h6v19h-6zm-24 61h6v24h-6zm-24 77h5v23h-5zm-27 67h7v14h-7z" fill="#0870cc" opacity=".62"/>
+  <ellipse cx="636" cy="717" rx="139" ry="35" fill="#46a9f7" opacity=".34" filter="url(#tinyGlow)"/>
+
+  <!-- Winding river through the valley to the foreground -->
+  <path d="M595 629h29v27h-18v24h-21v22h-26v24h-31v22h-26v19h418v-18h-36v-17h-29v-22h-26v-17h-30v-18h-28v-21h-31v-20h-26v-20h-30v-15z" fill="#0c244e" opacity=".8"/>
+  <path d="M608 632h19v28h-17v25h-21v22h-25v24h-29v20h-20v17h378v-17h-29v-17h-26v-19h-27v-17h-30v-18h-28v-20h-30v-19h-25v-20h-29v-15z" fill="url(#river)"/>
+  <path d="M608 636h8v25h-13v23h-19v23h-25v19h-26v18h-14v-10h18v-15h25v-20h22v-22h19v-25h13z" fill="#69c8ff" opacity=".58"/>
+  <path d="M635 653h-11v24h-17v23h-21v23h-24v20h-21v13h26v-18h22v-22h21v-24h17v-22h8z" fill="#123b8b" opacity=".7"/>
+  <path d="M575 720h24v3h-24zm-30 22h25v3h-25zm163-13h27v3h-27zm42 21h31v3h-31zm-116-54h19v3h-19z" fill="#a7e6ff" opacity=".58"/>
+
+  <!-- Far forest canopy and shadowed tree line -->
+  <path d="M0 475h47v-36h29v-31h30v24h28v-35h37v-28h28v26h29v-19h31v32h38v-27h27v29h33v-24h31v34h29v-22h34v27h30v-24h37v32h28v-26h37v35h31v-21h34v34h29v-23h39v26h30v-38h34v-33h33v24h31v-25h36v31h29v-27h36v31h34v-19h31v37h41v193H0z" fill="#102d24"/>
+  <path d="M0 494h34v-26h25v-28h28v21h26v-31h28v-25h24v27h28v-17h26v32h30v-23h23v31h31v-18h28v33h30v-17h31v26h24v-20h30v30h26v-17h32v27h26v-17h30v30h28v-16h28v-28h28v-28h28v23h27v-20h31v28h23v-19h30v27h28v-17h29v28h34v-15h28v181H0z" fill="#16382a"/>
+  <g opacity=".87">
+    <use xlink:href="#spruce" x="-28" y="350" width="135" height="216"/>
+    <use xlink:href="#oak" x="77" y="386" width="135" height="169"/>
+    <use xlink:href="#spruce" x="180" y="353" width="124" height="199"/>
+    <use xlink:href="#oak" x="296" y="400" width="121" height="151"/>
+    <use xlink:href="#spruce" x="389" y="374" width="119" height="190"/>
+    <use xlink:href="#oak" x="827" y="386" width="128" height="160"/>
+    <use xlink:href="#spruce" x="923" y="345" width="143" height="229"/>
+    <use xlink:href="#oak" x="1055" y="365" width="148" height="185"/>
+    <use xlink:href="#spruce" x="1174" y="331" width="158" height="252"/>
+    <use xlink:href="#oak" x="1286" y="378" width="142" height="177"/>
+  </g>
+
+  <!-- Cozy multi-storey cabin tucked into the right hillside -->
+  <ellipse cx="1082" cy="512" rx="222" ry="165" fill="url(#lanternGlow)" opacity=".42"/>
+  <path d="M917 401 1064 293l174 108v24H917z" fill="#241a16"/>
+  <path d="m925 396 139-99 166 99-16 13-150-88-125 88z" fill="#4b2e20"/>
+  <path d="m941 393 123-85 146 85-21 11-125-72-105 72z" fill="#704528"/>
+  <path d="m959 388 105-72 124 72-19 11-105-61-86 61z" fill="#865632"/>
+  <path d="m980 383 84-57 99 57-18 10-81-47-67 47z" fill="#a06a3d"/>
+  <path d="m1001 378 63-43 75 43-17 9-58-33-45 33z" fill="#b27a43"/>
+  <path d="m1022 373 42-29 51 29-13 8-38-22-29 22z" fill="#c28a4c"/>
+  <path d="m1043 368 21-15 26 15-9 8-17-10-12 10z" fill="#d49b54"/>
+  <path d="M963 410h202v153H963z" fill="url(#woodWall)"/>
+  <path d="M963 410h202v13H963zm0 35h202v6H963zm0 36h202v5H963zm0 36h202v6H963zm0 35h202v7H963z" fill="#9a663a"/>
+  <path d="M977 423h11v124h-11zm43 0h9v124h-9zm45 0h10v124h-10zm46 0h9v124h-9zm40 0h11v124h-11z" fill="#382519" opacity=".7"/>
+  <path d="M963 410h202v153H963z" fill="url(#planks)" opacity=".45"/>
+  <path d="M1000 439h20v25h-20zm109 0h22v25h-22zm-109 55h20v26h-20zm109 0h22v26h-22z" fill="#2b211b"/>
+  <path d="M1004 443h12v17h-12zm113 0h13v17h-13zm-113 59h12v17h-12zm113 0h13v17h-13z" fill="#ffd365"/>
+  <path d="M1004 443h12v17h-12zm113 0h13v17h-13zm-113 59h12v17h-12zm113 0h13v17h-13z" fill="#fff1a3" opacity=".8"/>
+  <path d="M1061 461h48v102h-48z" fill="#38251a"/>
+  <path d="M1068 468h34v95h-34z" fill="#4a2d1c"/>
+  <path d="M1081 474h8v89h-8z" fill="#211813"/>
+  <circle cx="1097" cy="516" r="3" fill="#f4bd62"/>
+  <!-- balcony, railings, stairs and support beams -->
+  <path d="M946 559h250v17H946z" fill="#352318"/>
+  <path d="M949 549h245v10H949z" fill="#8c592f"/>
+  <path d="M955 523h14v37h-14zm31 0h13v37h-13zm31 0h14v37h-14zm32 0h14v37h-14zm31 0h14v37h-14zm32 0h14v37h-14zm31 0h14v37h-14zm31 0h14v37h-14z" fill="#4d321f"/>
+  <path d="M949 526h245v10H949zm0 22h245v8H949z" fill="#a06b3d"/>
+  <path d="M965 575h15v99h-15zm188 0h15v99h-15zm-163 0h13v61h-13z" fill="url(#bark)"/>
+  <path d="M1137 578h18v91h-18zm-194 93h218v13H943z" fill="#38261b"/>
+  <path d="M1111 581h16v16h-16zm-16 16h16v16h-16zm-16 16h16v16h-16zm-16 16h16v16h-16zm-16 16h16v16h-16zm-16 16h16v16h-16z" fill="#684324"/>
+  <path d="M1111 581h6v16h-6zm-16 16h6v16h-6zm-16 16h6v16h-6zm-16 16h6v16h-6zm-16 16h6v16h-6zm-16 16h6v16h-6z" fill="#af7942"/>
+  <!-- roof tiles and chimney -->
+  <path d="M1189 329h18v53h-18z" fill="#39291e"/>
+  <path d="M1184 321h27v11h-27z" fill="#6d4730"/>
+  <path d="M1190 334h16v23h-16z" fill="#6d6a6b"/>
+  <path d="M1190 349h16v8h-16z" fill="#555866"/>
+  <path d="M926 396h16v12h-16zm28-19h16v12h-16zm29-20h16v12h-16zm30-21h16v12h-16zm31-21h16v12h-16zm34 21h16v12h-16zm31 20h16v12h-16zm29 20h16v12h-16zm31 20h16v12h-16z" fill="#38261c"/>
+  <path d="M934 393h13v5h-13zm29-20h13v5h-13zm30-21h13v5h-13zm30-21h13v5h-13zm30-20h13v5h-13zm33 20h13v5h-13zm30 20h13v5h-13zm31 21h13v5h-13z" fill="#c38a4e" opacity=".68"/>
+  <!-- Hanging lanterns and their pools of warm light -->
+  <g>
+    <circle cx="1049" cy="431" r="34" fill="url(#lanternGlow)"/>
+    <path d="M1043 421h12v5h-12zm2-6h8v6h-8zm-2 24h12v5h-12zm1-18h10v18h-10z" fill="#2f241b"/>
+    <rect x="1046" y="425" width="7" height="14" fill="#ffcf64"/><rect x="1047" y="428" width="5" height="8" fill="#fff4b0"/>
+    <circle cx="1140" cy="435" r="34" fill="url(#lanternGlow)"/>
+    <path d="M1134 425h12v5h-12zm2-6h8v6h-8zm-2 24h12v5h-12zm1-18h10v18h-10z" fill="#2f241b"/>
+    <rect x="1137" y="429" width="7" height="14" fill="#ffcf64"/><rect x="1138" y="432" width="5" height="8" fill="#fff4b0"/>
+    <path d="M1049 410v7m91 0v7" stroke="#30231a" stroke-width="3"/>
+  </g>
+
+  <!-- Dense forest silhouettes and individual blocky trees in the foreground -->
+  <path d="M0 556h65v-28h43v31h34v-42h48v28h38v-47h48v35h42v-24h44v52h42v-38h41v35h28v-26h42v45h39v-28h40v39h37v-29h42v42h37v-32h47v35h32v-40h42v34h36v-29h48v36h41v-43h46v37h33v-30h45v227H0z" fill="#102c22"/>
+  <g>
+    <use xlink:href="#spruce" x="-39" y="455" width="168" height="269"/>
+    <use xlink:href="#oak" x="94" y="485" width="170" height="212"/>
+    <use xlink:href="#spruce" x="207" y="453" width="164" height="262"/>
+    <use xlink:href="#oak" x="351" y="496" width="154" height="192"/>
+    <use xlink:href="#spruce" x="842" y="449" width="184" height="294"/>
+    <use xlink:href="#oak" x="1197" y="468" width="188" height="235"/>
+  </g>
+  <path d="M0 637h74v-20h38v30h50v-37h42v24h36v-35h49v28h34v-19h44v37h39v-29h43v35h37v-18h45v35h37v-23h47v36h40v-31h48v39h44v-28h45v37h43v-22h47v-34h39v29h45v-24h45v29h43v-36h49v162H0z" fill="#0b211c"/>
+
+  <!-- Mossy grass shelves, stepping stones, little flowers and path blocks -->
+  <path d="M0 631h98v-12h55v18h70v-16h53v24h71v-13h57v23h70v-17h48v25h60v-17h49v29h68v-13h56v21h69v-14h58v24h62v-15h63v22h71v-17h69v98H0z" fill="#28452c"/>
+  <path d="M0 650h104v-10h53v15h70v-12h52v18h67v-11h55v21h71v-13h50v19h60v-12h47v24h68v-9h54v17h70v-11h57v20h66v-11h61v18h72v-13h69v70H0z" fill="url(#grassTop)"/>
+  <g fill="#6d7d47" opacity=".85">
+    <rect x="64" y="644" width="19" height="5"/><rect x="177" y="658" width="21" height="4"/>
+    <rect x="330" y="657" width="24" height="4"/><rect x="447" y="672" width="22" height="4"/>
+    <rect x="800" y="693" width="18" height="4"/><rect x="903" y="706" width="26" height="4"/>
+    <rect x="1242" y="682" width="22" height="4"/><rect x="1314" y="704" width="16" height="4"/>
+  </g>
+  <g fill="#d8c16f">
+    <rect x="243" y="653" width="4" height="6"/><rect x="239" y="659" width="12" height="3"/><rect x="246" y="662" width="4" height="5"/>
+    <rect x="861" y="672" width="4" height="6"/><rect x="857" y="678" width="12" height="3"/><rect x="864" y="681" width="4" height="5"/>
+    <rect x="1275" y="650" width="4" height="6"/><rect x="1271" y="656" width="12" height="3"/><rect x="1278" y="659" width="4" height="5"/>
+  </g>
+  <g fill="#d7d3b4">
+    <rect x="306" y="674" width="5" height="5"/><rect x="313" y="669" width="4" height="4"/>
+    <rect x="738" y="696" width="5" height="5"/><rect x="745" y="691" width="4" height="4"/>
+    <rect x="1158" y="669" width="5" height="5"/><rect x="1164" y="665" width="4" height="4"/>
+  </g>
+  <g fill="#3e4545">
+    <path d="M11 692h31v10H11zm42 11h29v9H53zm207 12h35v10h-35zm74-23h24v8h-24zm343 46h30v9h-30zm317-35h33v9h-33zm109 34h37v10h-37zm170-40h29v8h-29z"/>
+  </g>
+
+  <!-- Lower cascade flows in front of the forest and into the river pool -->
+  <path d="M682 414h14v18h-9v18h-10v22h-12v22h-12v22h-12v22h-12v22h-12v20h-15v17h-16v-15h14v-20h11v-22h11v-22h10v-22h11v-22h11v-20h10v-18h9z" fill="url(#water)"/>
+  <path d="M686 416h4v17h-7v19h-9v22h-11v21h-11v22h-11v22h-11v22h-12v19h-12v18h-6v-17h11v-20h11v-22h11v-22h10v-22h11v-21h11v-22h9v-18h9z" fill="url(#waterShimmer)" opacity=".9"/>
+  <path d="M683 418h3v18h-7v20h-9v22h-10v22h-10v22h-10v21h-10v22h-11v21h-9v-6h8v-19h11v-22h10v-21h10v-22h10v-22h10v-22h9v-18h8z" fill="#d5f6ff" opacity=".74"/>
+
+  <!-- Foreground channel keeps the river visible through the hero's wide crop -->
+  <path d="M590 590h45v17h-25v15h30v15h24v15h32v15h38v15h86v23H363v-21h64v-16h42v-16h35v-15h31v-15h22v-15h19v-15h19v-15h-29z" fill="#0a2458"/>
+  <path d="M596 592h34v13h-25v15h31v15h22v15h31v15h37v15h82v20H375v-18h55v-16h40v-16h35v-15h29v-15h22v-15h20v-13h20z" fill="url(#river)"/>
+  <path d="M599 593h8v13h-19v14h-23v14h-28v15h-31v15h-36v16h-34v8h-19v-6h29v-12h31v-15h31v-15h28v-15h24v-14h23v-13h16z" fill="#6bcaff" opacity=".74"/>
+  <path d="M622 607h8v12h15v12h21v14h24v15h31v15h36v14h40v7h-49v-10h-34v-15h-30v-15h-26v-14h-22v-15h-24v-13h-18z" fill="#123b8d" opacity=".8"/>
+  <g fill="#b9efff" opacity=".7">
+    <path d="M567 613h17v3h-17zm-29 15h19v3h-19zm-32 16h19v3h-19zm-36 16h22v3h-22zm185-34h14v3h-14zm39 28h21v3h-21z"/>
+  </g>
+
+  <!-- Small timber footbridge at the near bend in the river -->
+  <path d="M657 682h110v9H657zm8 10h9v31h-9zm86 0h9v31h-9z" fill="#34241b"/>
+  <path d="M662 679h102v7H662zm8 9h8v28h-8zm83 0h8v28h-8z" fill="#78502c"/>
+  <path d="M673 681h17v5h-17zm24 0h17v5h-17zm24 0h17v5h-17z" fill="#b17a3c"/>
+
+  <!-- Gentle atmospheric shade at the lower edge; all artwork remains vector -->
+  <rect y="688" width="1365" height="80" fill="#071019" opacity=".2"/>
+</svg>

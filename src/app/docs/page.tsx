@@ -7,7 +7,7 @@ import { Search, BookOpen, Cpu, Database, Globe, ArrowLeft, Copy, Check } from "
 
 interface DocItem {
   id: string;
-  category: "Database" | "Hardware" | "AI & Audio" | "Fullstack";
+  category: "Database" | "Fullstack" | "Security" | "Architecture";
   title: string;
   summary: string;
   codeSnippet: string;
@@ -39,67 +39,50 @@ export const prisma =
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;`
   },
   {
-    id: "esp8266-dht11",
-    category: "Hardware",
-    title: "ESP8266 + DHT11 GPIO Pinout & PWM Fan Controller",
-    summary: "Hardware schematics, circuit wiring, and non-blocking Arduino C++ code for automated thermal regulation.",
+    id: "jwt-auth-express",
+    category: "Security",
+    title: "JWT Authentication & Middleware Protection in Express",
+    summary: "Implementing secure stateless JWT authentication, password hashing with bcrypt, and route authorization guards in Node.js.",
     steps: [
-      "Connect DHT11 VCC to 3.3V, GND to GND, and DATA pin to GPIO 4 (D2) with a 10k pull-up resistor.",
-      "Connect N-Channel MOSFET Gate to GPIO 14 (D5) for PWM speed control of the 12V fan.",
-      "Flash the non-blocking timer routine to read temperature every 2000ms without stalling Wi-Fi."
+      "Hash incoming user passwords with bcrypt (salt rounds = 10) before persisting to PostgreSQL.",
+      "Sign JWT access tokens with a secure secret and reasonable expiration (e.g. 24h).",
+      "Attach authenticateToken middleware to private Express routes to verify bearer headers."
     ],
-    codeSnippet: `// firmware/smart_fan.ino
-#include <DHT.h>
-#define DHTPIN 4
-#define DHTTYPE DHT11
-#define FAN_PWM_PIN 14
+    codeSnippet: `// middleware/auth.ts
+import { Request, Response, NextFunction } from 'express';
+import jwt from 'jsonwebtoken';
 
-DHT dht(DHTPIN, DHTTYPE);
+export function authenticateToken(req: Request, res: Response, next: NextFunction) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
 
-void setup() {
-  pinMode(FAN_PWM_PIN, OUTPUT);
-  dht.begin();
-  analogWriteRange(255); // 8-bit PWM
-}
+  if (!token) return res.status(401).json({ error: 'Access token required' });
 
-void loop() {
-  float temp = dht.readTemperature();
-  if (!isnan(temp)) {
-    int pwmSpeed = map(constrain(temp, 22, 35), 22, 35, 60, 255);
-    analogWrite(FAN_PWM_PIN, pwmSpeed);
-  }
-  delay(2000);
+  jwt.verify(token, process.env.JWT_SECRET as string, (err, user) => {
+    if (err) return res.status(403).json({ error: 'Invalid or expired token' });
+    (req as any).user = user;
+    next();
+  });
 }`
   },
   {
-    id: "voice-streaming",
-    category: "AI & Audio",
-    title: "Real-Time Audio Streaming with Web Audio API",
-    summary: "Low-latency PCM audio playback buffering directly in the browser via AudioContext and ScriptProcessor/AudioWorklet.",
+    id: "postgres-indexing",
+    category: "Database",
+    title: "PostgreSQL Indexing & Query Optimization Patterns",
+    summary: "Improving relational query performance with composite B-Tree indexes and EXPLAIN ANALYZE profiling.",
     steps: [
-      "Initialize AudioContext with 24000Hz sample rate to match OpenAI speech output.",
-      "Stream binary chunks over WebSocket and schedule playback nodes seamlessly.",
-      "Apply WebRTC constraints for acoustic echo cancellation and noise suppression."
+      "Identify high-frequency WHERE and JOIN predicates across user and project tables.",
+      "Add composite B-Tree indexes in PostgreSQL migration scripts.",
+      "Use EXPLAIN ANALYZE to verify index scans and eliminate sequential table scans."
     ],
-    codeSnippet: `// lib/audioStreamer.ts
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 24000 });
-let nextStartTime = 0;
+    codeSnippet: `// schema.prisma
+model Project {
+  id        String   @id @default(uuid())
+  slug      String   @unique
+  authorId  String
+  createdAt DateTime @default(now())
 
-export function playAudioChunk(pcmData: Int16Array) {
-  const float32 = new Float32Array(pcmData.length);
-  for (let i = 0; i < pcmData.length; i++) {
-    float32[i] = pcmData[i] / 32768.0;
-  }
-  const buffer = audioCtx.createBuffer(1, float32.length, 24000);
-  buffer.getChannelData(0).set(float32);
-
-  const source = audioCtx.createBufferSource();
-  source.buffer = buffer;
-  source.connect(audioCtx.destination);
-
-  const startTime = Math.max(audioCtx.currentTime, nextStartTime);
-  source.start(startTime);
-  nextStartTime = startTime + buffer.duration;
+  @@index([authorId, createdAt(sort: Desc)])
 }`
   }
 ];
@@ -148,7 +131,7 @@ export default function DocsPage() {
               </h1>
             </div>
             <p className="text-xs sm:text-sm text-[#8E8A82] mt-1">
-              Architecture notes, setup guides, and hardware schematics.
+              Architecture notes, setup guides, and full-stack patterns.
             </p>
           </div>
 

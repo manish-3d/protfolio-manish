@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { sound } from "@/lib/soundService";
 import { PROFILE_DATA } from "@/data/portfolioData";
-import { GithubIcon, LinkedinIcon, TwitterIcon, MailIcon } from "@/components/ui/SocialIcons";
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon, MailIcon } from "@/components/ui/SocialIcons";
 import { BookOpen, FileText, Send, CheckCircle2 } from "lucide-react";
 
 export default function ContactPage() {
@@ -53,6 +53,16 @@ export default function ContactPage() {
             <span>LinkedIn</span>
           </a>
           <a
+            href={PROFILE_DATA.socials.leetcode}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => sound.playWoodClick()}
+            className="mc-btn-secondary text-xs py-2 px-4 flex items-center gap-2"
+          >
+            <LeetcodeIcon size={15} />
+            <span>LeetCode</span>
+          </a>
+          <a
             href={PROFILE_DATA.socials.twitter}
             target="_blank"
             rel="noopener noreferrer"
@@ -60,7 +70,7 @@ export default function ContactPage() {
             className="mc-btn-secondary text-xs py-2 px-4 flex items-center gap-2"
           >
             <TwitterIcon size={15} />
-            <span>Twitter</span>
+            <span>X / Twitter</span>
           </a>
           <a
             href={PROFILE_DATA.socials.email}

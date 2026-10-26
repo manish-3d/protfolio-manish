@@ -7,7 +7,7 @@ import { sound } from "@/lib/soundService";
 import { BLOG_POSTS } from "@/data/portfolioData";
 import { Search, Calendar, Clock } from "lucide-react";
 
-type BlogCategory = "All" | "Web Dev" | "AI" | "IoT" | "DSA" | "Other";
+type BlogCategory = "All" | "Full Stack" | "Web Dev";
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState<BlogCategory>("All");
@@ -42,7 +42,7 @@ export default function BlogPage() {
               </h1>
             </div>
             <p className="text-xs sm:text-sm text-[#8E8A82] mt-1">
-              Notes, tutorials and things I learn.
+              Engineering notes, architecture patterns and web development guides.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ export default function BlogPage() {
 
         {/* Filter Bar */}
         <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-[#38342e]">
-          {(["All", "Web Dev", "AI", "IoT", "DSA", "Other"] as BlogCategory[]).map((cat) => {
+          {(["All", "Full Stack", "Web Dev"] as BlogCategory[]).map((cat) => {
             const isActive = selectedCategory === cat;
             return (
               <button
