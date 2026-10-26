@@ -29,47 +29,56 @@ export default function FeaturedProjects() {
         </Link>
       </div>
 
-      {/* 4 Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3.5">
+      {/* 2 Flagship Full-Stack Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {featured.map((project) => (
           <Link
             key={project.slug}
             href={`/projects/${project.slug}`}
             onClick={() => sound.playWoodClick()}
             onMouseEnter={() => sound.playItemPop()}
-            className="mc-card-inset p-2.5 bg-[#252320] hover:bg-[#2e2a25] border-2 border-[#38342e] hover:border-[#36C653] transition-all duration-150 flex flex-col justify-between group rounded"
+            className="mc-card-inset p-3 bg-[#252320] hover:bg-[#2e2a25] border-2 border-[#38342e] hover:border-[#36C653] transition-all duration-150 flex flex-col justify-between group rounded"
           >
             <div>
               {/* Cover Image */}
-              <div className="relative w-full h-32 rounded overflow-hidden bg-[#141312] mb-2.5">
+              <div className="relative w-full h-40 sm:h-44 rounded overflow-hidden bg-[#141312] mb-3">
                 <Image
                   src={project.coverImage}
                   alt={project.title}
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-200 pixelated"
                 />
+                <span className="absolute top-2 left-2 mc-tag text-[10px] bg-[#141312]/90 border border-[#36C653] text-[#8DE6A0]">
+                  Full Stack
+                </span>
+                {project.liveUrl && (
+                  <span className="absolute top-2 right-2 mc-tag text-[10px] bg-[#141312]/90 border border-[#36C653]/60 text-[#36C653] flex items-center gap-1 font-pixel">
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#36C653] animate-pulse" />
+                    Live
+                  </span>
+                )}
               </div>
 
               {/* Title & Subtitle */}
-              <h3 className="font-pixel text-sm text-[#F4F0E8] font-bold group-hover:text-[#8DE6A0] transition-colors truncate">
+              <h3 className="font-pixel text-base text-[#F4F0E8] font-bold group-hover:text-[#8DE6A0] transition-colors truncate">
                 {project.title}
               </h3>
-              <p className="text-[11px] text-[#8E8A82] line-clamp-1 mt-0.5">
-                {project.tagline}
+              <p className="text-xs text-[#8E8A82] line-clamp-2 mt-1">
+                {project.description}
               </p>
             </div>
 
             {/* Tags & Action Arrow */}
-            <div className="mt-3 pt-2 border-t border-[#38342e]/60 flex items-center justify-between">
-              <div className="flex flex-wrap gap-1">
-                {project.tags.slice(0, 3).map((tag) => (
-                  <span key={tag} className="mc-tag text-[10px] py-0 px-1.5">
+            <div className="mt-3 pt-2.5 border-t border-[#38342e]/60 flex items-center justify-between">
+              <div className="flex flex-wrap gap-1.5">
+                {project.tags.slice(0, 4).map((tag) => (
+                  <span key={tag} className="mc-tag text-[10px] py-0.5 px-2">
                     {tag}
                   </span>
                 ))}
               </div>
-              <span className="text-[#F5C66B] font-bold text-xs group-hover:translate-x-0.5 transition-transform">
-                &rarr;
+              <span className="text-[#F5C66B] font-bold text-xs group-hover:translate-x-1 transition-transform">
+                View &rarr;
               </span>
             </div>
           </Link>
