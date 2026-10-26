@@ -103,10 +103,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="mc-card-inset p-4 bg-[#252320]">
               <h3 className="font-pixel text-sm text-[#8DE6A0] font-bold mb-3 flex items-center gap-2">
-                <span>🌐</span> Fullstack Web
+                <span>🌐</span> Full Stack & Frontend
               </h3>
               <div className="flex flex-wrap gap-1.5">
-                {["Next.js 14", "React 18", "TypeScript", "Node.js", "Express", "Tailwind CSS", "Prisma ORM", "PostgreSQL", "REST APIs"].map((s) => (
+                {["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "Responsive Design"].map((s) => (
                   <span key={s} className="mc-tag text-xs">{s}</span>
                 ))}
               </div>
@@ -114,10 +114,10 @@ export default function AboutPage() {
 
             <div className="mc-card-inset p-4 bg-[#252320]">
               <h3 className="font-pixel text-sm text-[#F5C66B] font-bold mb-3 flex items-center gap-2">
-                <span>⚡</span> Embedded & IoT
+                <span>⚙️</span> Backend & Databases
               </h3>
               <div className="flex flex-wrap gap-1.5">
-                {["ESP8266 NodeMCU", "Arduino", "Embedded C/C++", "DHT11 Sensors", "PWM Motor Control", "WebSockets", "MQTT", "Hardware Debugging"].map((s) => (
+                {["Node.js", "Express.js", "Prisma ORM", "PostgreSQL", "RESTful APIs", "JWT Auth", "Relational Modeling"].map((s) => (
                   <span key={s} className="mc-tag text-xs">{s}</span>
                 ))}
               </div>
@@ -125,10 +125,10 @@ export default function AboutPage() {
 
             <div className="mc-card-inset p-4 bg-[#252320]">
               <h3 className="font-pixel text-sm text-[#60a5fa] font-bold mb-3 flex items-center gap-2">
-                <span>🤖</span> AI & Systems
+                <span>🏛️</span> Core Computer Science
               </h3>
               <div className="flex flex-wrap gap-1.5">
-                {["OpenAI GPT-4o API", "Voice Agents", "LangChain", "Python", "FastAPI", "Playwright Automation"].map((s) => (
+                {["Data Structures & Algorithms", "Object-Oriented Programming", "DBMS", "Operating Systems", "Computer Networks"].map((s) => (
                   <span key={s} className="mc-tag text-xs">{s}</span>
                 ))}
               </div>
@@ -139,7 +139,7 @@ export default function AboutPage() {
                 <span>🛠️</span> Tools & Workflow
               </h3>
               <div className="flex flex-wrap gap-1.5">
-                {["Git & GitHub", "Docker", "Linux / Bash", "VS Code", "Vercel", "Voxel / 2D Art"].map((s) => (
+                {["Git & GitHub", "Docker", "Linux / Bash", "VS Code", "Postman", "Vercel"].map((s) => (
                   <span key={s} className="mc-tag text-xs">{s}</span>
                 ))}
               </div>

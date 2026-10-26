@@ -5,6 +5,7 @@ import Link from "next/link";
 import { sound } from "@/lib/soundService";
 import { PROFILE_DATA } from "@/data/portfolioData";
 import { Download, ArrowLeft, GraduationCap, Code2, Briefcase } from "lucide-react";
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetcodeIcon } from "@/components/ui/SocialIcons";
 
 export default function ResumePage() {
   const handleDownload = () => {
@@ -46,15 +47,27 @@ export default function ResumePage() {
           <p className="font-pixel text-sm text-[#36C653] font-semibold">
             {PROFILE_DATA.title}
           </p>
-          <div className="flex flex-wrap gap-4 text-xs text-[#8E8A82] pt-1">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-[#8E8A82] pt-1">
             <span>📍 Greater Noida, India</span>
             <span>•</span>
-            <a href={PROFILE_DATA.socials.github} target="_blank" rel="noreferrer" className="text-[#38bdf8] hover:underline">
-              github.com/manish
+            <a href={PROFILE_DATA.socials.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-[#38bdf8] hover:underline">
+              <GithubIcon size={14} />
+              <span>github.com/manish-3d</span>
             </a>
             <span>•</span>
-            <a href={PROFILE_DATA.socials.linkedin} target="_blank" rel="noreferrer" className="text-[#38bdf8] hover:underline">
-              linkedin.com/in/manish
+            <a href={PROFILE_DATA.socials.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-[#38bdf8] hover:underline">
+              <LinkedinIcon size={14} />
+              <span>linkedin.com/in/manish-kumar-85904b3a2</span>
+            </a>
+            <span>•</span>
+            <a href={PROFILE_DATA.socials.leetcode} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-[#FFA116] hover:underline">
+              <LeetcodeIcon size={14} />
+              <span>leetcode.com/u/manixshsg</span>
+            </a>
+            <span>•</span>
+            <a href={PROFILE_DATA.socials.twitter} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-[#38bdf8] hover:underline">
+              <TwitterIcon size={14} />
+              <span>x.com/realDijkstra</span>
             </a>
           </div>
         </div>
@@ -73,10 +86,10 @@ export default function ResumePage() {
               <span className="text-xs text-[#8E8A82]">2022 - 2026</span>
             </div>
             <p className="text-xs text-[#36C653]">
-              B.Tech in Computer Science and Engineering (Internet of Things)
+              B.Tech in Computer Science and Engineering
             </p>
             <p className="text-xs text-[#8E8A82] pt-1 leading-relaxed">
-              Coursework: Distributed Systems, Embedded Microcontrollers, Data Structures & Algorithms, Database Management Systems, Cloud Computing.
+              Coursework: Data Structures & Algorithms, Database Management Systems (DBMS), Operating Systems, Computer Networks, Object-Oriented Programming, Full Stack Web Architecture.
             </p>
           </div>
         </div>
@@ -93,33 +106,16 @@ export default function ResumePage() {
             <div className="mc-card-inset p-4 bg-[#252320] space-y-1.5 rounded">
               <div className="flex items-center justify-between">
                 <h3 className="font-pixel text-sm text-[#F4F0E8] font-bold">
-                  Locus — AI Real Estate Platform
+                  Locus — Full-Stack Real Estate Platform
                 </h3>
-                <span className="mc-tag text-[10px]">Next.js 14 • Prisma • Neon PG • AI</span>
+                <span className="mc-tag text-[10px]">Next.js 14 • Prisma • Neon PG • Tailwind</span>
               </div>
               <p className="text-xs text-[#D2CBBF] leading-relaxed">
-                • Built a modern real estate platform supporting real-time conversational voice agents for property tours.
+                • Built a modern full-stack real estate application supporting interactive property catalogs and dynamic filtering.
                 <br />
-                • Reduced voice round-trip latency to &lt;350ms through streaming WebRTC audio and Web Audio API buffers.
+                • Designed serverless database pooling using Prisma ORM on Neon PostgreSQL to handle high concurrent traffic with low query latency.
                 <br />
-                • Designed serverless database pooling using Prisma ORM on Neon PostgreSQL to handle high concurrent traffic.
-              </p>
-            </div>
-
-            {/* Smart Fan IoT */}
-            <div className="mc-card-inset p-4 bg-[#252320] space-y-1.5 rounded">
-              <div className="flex items-center justify-between">
-                <h3 className="font-pixel text-sm text-[#F4F0E8] font-bold">
-                  Smart Fan — IoT Automated Embedded System
-                </h3>
-                <span className="mc-tag text-[10px]">ESP8266 • DHT11 • Embedded C++</span>
-              </div>
-              <p className="text-xs text-[#D2CBBF] leading-relaxed">
-                • Engineered an automated ambient climate control fan system with PWM duty-cycle modulation.
-                <br />
-                • Integrated PIR presence sensing with an auto-sleep mode, reducing idle energy consumption by 40%.
-                <br />
-                • Implemented sub-50ms WebSocket telemetry streaming to a localized web control dashboard.
+                • Implemented dynamic mortgage calculators and real-time appointment scheduling workflows.
               </p>
             </div>
 
@@ -133,6 +129,10 @@ export default function ResumePage() {
               </div>
               <p className="text-xs text-[#D2CBBF] leading-relaxed">
                 • Designed a peer-review and project collaboration hub with milestone-based progress boards and karma bounties.
+                <br />
+                • Architected normalized PostgreSQL relational schemas with foreign keys and cascade rules for reliable user cohorts.
+                <br />
+                • Implemented secure JWT-based authentication and modular REST API microservices in Node.js & Express.
               </p>
             </div>
           </div>
@@ -147,19 +147,19 @@ export default function ResumePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
             <div className="mc-card-inset p-3 bg-[#252320]">
               <span className="font-pixel text-[#8DE6A0] block mb-1">Languages:</span>
-              <span>TypeScript, JavaScript, Python, C/C++, HTML5, CSS3/Tailwind</span>
+              <span>TypeScript, JavaScript, SQL, HTML5, CSS3</span>
             </div>
             <div className="mc-card-inset p-3 bg-[#252320]">
-              <span className="font-pixel text-[#8DE6A0] block mb-1">Frameworks:</span>
-              <span>Next.js 14, React 18, Node.js, Express, Prisma ORM, Three.js</span>
+              <span className="font-pixel text-[#8DE6A0] block mb-1">Frameworks & Libraries:</span>
+              <span>Next.js 14, React 18, Node.js, Express.js, Prisma ORM, Tailwind CSS</span>
             </div>
             <div className="mc-card-inset p-3 bg-[#252320]">
-              <span className="font-pixel text-[#8DE6A0] block mb-1">Hardware / IoT:</span>
-              <span>ESP8266, NodeMCU, Arduino, DHT11, PWM, WebSockets, MQTT</span>
+              <span className="font-pixel text-[#8DE6A0] block mb-1">Core CS & Architecture:</span>
+              <span>Data Structures & Algorithms, OOP, Database Design, System Design, REST APIs</span>
             </div>
             <div className="mc-card-inset p-3 bg-[#252320]">
               <span className="font-pixel text-[#8DE6A0] block mb-1">Databases & Tools:</span>
-              <span>PostgreSQL, Neon, Docker, Git, Linux, VS Code, Vercel</span>
+              <span>PostgreSQL, Neon, Docker, Git & GitHub, Linux / Bash, VS Code, Vercel</span>
             </div>
           </div>
         </div>
