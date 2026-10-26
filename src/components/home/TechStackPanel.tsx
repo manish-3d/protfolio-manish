@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { sound } from "@/lib/soundService";
 import { STACK_ITEMS, StackItem } from "@/data/portfolioData";
+import { BrandIcon } from "@/components/ui/BrandIcons";
 
 export default function TechStackPanel() {
   const [activeTooltip, setActiveTooltip] = useState<StackItem | null>(null);
@@ -44,14 +45,13 @@ export default function TechStackPanel() {
               key={item.id}
               onMouseEnter={() => handleMouseEnter(item)}
               onMouseLeave={handleMouseLeave}
-              className="mc-inventory-slot h-12 rounded cursor-pointer group"
+              className="mc-inventory-slot h-12 rounded cursor-pointer group flex items-center justify-center p-2"
             >
-              <span
-                className="font-pixel text-xs font-bold transition-transform group-hover:scale-110"
-                style={{ color: item.color }}
-              >
-                {item.symbol}
-              </span>
+              <BrandIcon
+                id={item.id}
+                size={22}
+                className="transition-transform group-hover:scale-110 filter drop-shadow"
+              />
               <span className="sr-only">{item.name}</span>
             </div>
           ))}
