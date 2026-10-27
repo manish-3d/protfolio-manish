@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { sound } from "@/lib/soundService";
 import { Project } from "@/data/portfolioData";
-import { ExternalLink, ArrowLeft, CheckCircle2, ChevronRight } from "lucide-react";
+import { ExternalLink, ArrowLeft, CheckCircle2, ChevronRight, BookOpen } from "lucide-react";
 import { GithubIcon } from "@/components/ui/SocialIcons";
 
 type DetailTab = "Overview" | "Features" | "Tech Stack" | "Screenshots" | "Learnings";
@@ -59,7 +59,17 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
             </div>
 
             {/* CTAs */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              {project.docUrl && (
+                <Link
+                  href={project.docUrl}
+                  onClick={() => sound.playWoodClick()}
+                  className="mc-tag font-pixel text-xs py-2 px-3 flex items-center gap-1.5 text-[#F5C66B] border-[#F5C66B]/60 hover:text-[#F4F0E8] hover:border-[#F5C66B] transition-colors bg-[#252320]"
+                >
+                  <BookOpen size={14} />
+                  <span>Architecture Doc</span>
+                </Link>
+              )}
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}

@@ -8,6 +8,7 @@ export interface Project {
   tags: string[];
   githubUrl?: string;
   liveUrl?: string;
+  docUrl?: string;
   duration?: string;
   description: string;
   overview: string;
@@ -119,6 +120,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js 14", "Prisma", "PostgreSQL", "Tailwind CSS", "TypeScript"],
     githubUrl: "https://github.com/manish-3d",
     liveUrl: "https://locuss.vercel.app/",
+    docUrl: "/docs/locus",
     duration: "3 months",
     description: "A modern full-stack real estate platform featuring interactive property listings, virtual tours, and database search filters.",
     overview: "Locus is a complete full-stack real estate web application built with Next.js 14 App Router, Prisma ORM, and PostgreSQL. It allows buyers to explore property catalogs with deep search filtering, schedule appointments with managers, calculate real-time mortgage estimates, and view property specs.",
@@ -157,6 +159,7 @@ export const PROJECTS: Project[] = [
     tags: ["React", "Node.js", "Express", "PostgreSQL", "Tailwind CSS"],
     githubUrl: "https://github.com/manish-3d",
     liveUrl: "https://cohort-x-five.vercel.app/feed",
+    docUrl: "/docs/cohortx",
     duration: "2 months",
     description: "A full-stack developer collaboration platform where creators showcase projects, find co-builders, and exchange real-time feedback.",
     overview: "CohortX enables engineers and designers to launch project milestones, gather verified peer reviews, form cross-discipline teams, and track shipping velocity in a collaborative community.",
